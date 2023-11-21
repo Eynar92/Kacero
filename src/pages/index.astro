@@ -1,13 +1,56 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Buttons/button.astro";
+
+import { Image } from "astro:assets";
+
+import heroImage from "../assets/bobinaInox.png";
 ---
 
 <Layout title="Inicio">
-	<main>
-		
+	<main class="h-[calc(100vh-64px)] w-full px-[150px] text-slate-900 py-24">
+		<div class="max-w-[1440px] flex gap-10">
+			<div class="flex-1 flex flex-col py-8 justify-between">
+				<h1 class="text-5xl font-semibold">
+					Importadora y distribuidora de
+					<span class="font-bold text-sky-900">ACERO INOXIDABLE</span>
+				</h1>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Quisquam adipisci illum doloribus nulla unde alias quibusdam
+					voluptate? Consequatur, dolorem perspiciatis, obcaecati
+					accusantium provident accusamus repellendus officia
+					consequuntur, doloremque odio cupiditate.
+				</p>
+				<div>
+					<Button title="Comunicate" />
+				</div>
+			</div>
+			<div class="flex-1">
+				<Image
+					src={heroImage}
+					alt="Hero image"
+					quality={"mid"}
+					class="drop-shadow-[0_25px_25px_rgba(23,37,84,0.5)] flotar"
+				/>
+			</div>
+		</div>
 	</main>
 </Layout>
 
 <style>
-
+	.flotar {
+		animation: float 1.7s ease-in-out infinite alternate;
+	}
+	@keyframes float {
+		0% {
+			transform: translate(0, 0);
+		}
+		50% {
+			transform: translate(0, 4px);
+		}
+		100% {
+			transform: translate(0, 0);
+		}
+	}
 </style>
