@@ -1,0 +1,28 @@
+---
+import "leaflet/dist/leaflet.css";
+---
+
+<div id="map" class="h-full"></div>
+
+<script>
+    import L from "leaflet";
+
+    const latitude = -17.435567; // Tu valor de latitud
+    const longitude = -66.121747; // Tu valor de longitud
+    const zoom = 16;
+
+    const map = L.map("map").setView([latitude, longitude], zoom);
+    const marker = L.marker([latitude, longitude]).addTo(map);
+
+    map.on("click", () => {
+        map.scrollWheelZoom.enable();
+    });
+
+    map.on("mouseover", () => {
+        map.scrollWheelZoom.disable();
+    });
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+    }).addTo(map);
+</script>

@@ -1,0 +1,11 @@
+---
+interface Props {
+    title: string;
+    whiteText?: boolean;
+}
+const { title, whiteText = false } = Astro.props;
+---
+
+<h2 class={`text-4xl font-bold w-full ${whiteText ? "text-white" : ""}`}>
+    {title}
+</h2>

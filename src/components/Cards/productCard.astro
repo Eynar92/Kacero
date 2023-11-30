@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import productImage from "../../assets/bobinaInox.png";
+import Button from "../Buttons/button.astro";
+
+interface Props {
+    productName: string;
+    title: string;
+    specs: string[];
+    tags: string[];
+}
+const {
+    productName = "Bobina inoxidable",
+    title = "Bobina de acero inoxidable",
+    specs = ["Espesor 3mm", "Ancho de 1.2m"],
+    tags = ["Envío gratuito", "-20%"],
+} = Astro.props;
+---
+
+<div
+    class="border-slate-300 rounded-xl max-w-xs border p-5 flex flex-col gap-[10px] justify-center shadow-2xl hover:translate-y-[-8px] transition-transform duration-300"
+>
+    <Image
+        src={productImage}
+        alt=`${productName}`
+        class="max-w-[218px] self-center"
+    />
+    <div class="w-full flex flex-wrap gap-1">
+        <div class="p-2 bg-slate-900 rounded-[4px] flex">
+            <span class="text-white text-[8px]">{tags[0]}</span>
+        </div>
+        <div class="p-2 bg-slate-900 rounded-[4px] flex">
+            <span class="text-white text-[8px]">{tags[1]}</span>
+        </div>
+    </div>
+    <h3 class="text-slate-900 text-lg">{title}</h3>
+    <div class="w-full text-slate-500 text-sm flex flex-col gap-1">
+        <span>{specs[0]}</span>
+        <span>{specs[1]}</span>
+    </div>
+    <Button title="Ver Producto" fullWidth/>
+</div>

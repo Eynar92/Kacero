@@ -4,13 +4,23 @@ import logo from "../../assets/kacero-logo.jpg";
 ---
 
 <header
-    class="h-16 w-full flex justify-center px-[150px] text-gray-50 text-lg font-bold bg-gradient-to-r from-slate-900 via-slate-900 to-slate-700"
+    class="h-16
+    w-full
+    flex
+    justify-center
+    px-4
+    sm:px-8
+    md:px-[150px]
+    text-gray-50
+    text-lg
+    font-bold
+    bg-gradient-to-r from-slate-900 via-slate-900 to-slate-700"
 >
     <div class="h-full w-full max-w-[1440px] flex justify-between items-center">
         <a href="/">
-            <Image src={logo} alt="Navbar logo" class="h-14 w-auto"/>
+            <Image src={logo} alt="Navbar logo" class="h-14 w-auto" />
         </a>
-        <ul class="flex gap-16 items-center">
+        <ul class="hidden lg:flex gap-16 items-center">
             <li><a href="/">Inicio</a></li>
             <li><a href="/products">Productos</a></li>
             <li><a href="/about">Nosotros</a></li>

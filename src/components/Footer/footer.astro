@@ -1,0 +1,72 @@
+---
+import SectionTitle from "../Titles/SectionTitle.astro";
+---
+
+<footer
+    class="w-full
+    px-4
+    py-8
+    sm:px-8
+    sm:py-16
+    md:px-[150px]
+    md:py-24
+    bg-gradient-to-r
+    from-slate-900
+    via-slate-900
+    to-slate-700
+    text-white
+    flex
+    flex-col
+    gap-20"
+>
+    <div
+        class="h-full
+        w-full
+        max-w-[1440px]
+        flex
+        flex-wrap
+        justify-around
+        items-center
+        gap-10"
+    >
+        <ul class="flex flex-col gap-10 items-center max-w-[250px]">
+            <li><a href="/">Inicio</a></li>
+            <li><a href="/products">Productos</a></li>
+            <li><a href="/about">Nosotros</a></li>
+            <li><a href="/contact">Contacto</a></li>
+        </ul>
+        <div class="flex flex-col gap-10 items-center text-white max-w-[250px]">
+            <h3 class="text-base font-bold">Nuestras Redes</h3>
+            <ul class="flex flex-col gap-10 items-center">
+                <li><a href="https://www.facebook.com/">Facebook</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+                <li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div class="flex flex-col gap-10 text-white max-w-[250px] self-start">
+            <h3 class="text-base font-bold">Oficinas & Depósito</h3>
+            <ul class="flex flex-col gap-10">
+                <li>
+                    <a href="/"
+                        >Calle Gabriel de Áviles, Zona Alalay,Cochabamba,
+                        Bolivia</a
+                    >
+                </li>
+            </ul>
+        </div>
+        <div class="flex flex-col gap-10 text-white max-w-[250px] self-start">
+            <h3 class="text-base font-bold">Contacto</h3>
+            <ul class="flex flex-col gap-10">
+                <li><a href="/">Telf. 67462981</a></li>
+                <li><a href="/">email. kacero@gmail.com</a></li>
+            </ul>
+        </div>
+    </div>
+    <div
+        class="w-full flex flex-col md:flex-row justify-center items-center text-gray-300 text-xs gap-1"
+    >
+        <p class="font-semibold">Kacero Importadora y Distribuidora</p>
+        <span class="hidden md:inline-block">-</span>
+        <p>{new Date().getFullYear()} Todos los derechos reservados.</p>
+    </div>
+</footer>
