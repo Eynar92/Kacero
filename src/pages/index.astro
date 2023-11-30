@@ -1,16 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Buttons/button.astro";
+import SectionTitle from "../components/Titles/SectionTitle.astro";
+import Cards from "../components/Cards/cards.astro";
+import FeatureCards from "../components/Cards/featureCards.astro";
+import KaceroMap from "../components/Map/kaceroMap.astro";
 
 import { Image } from "astro:assets";
 
-import heroImage from "../assets/bobinaInox.png";
+import zyroImage from "../assets/zyro-image.png";
+import aboutUsImage from "../assets/mainAboutUsSection.png";
 ---
 
 <Layout title="Inicio">
-	<main class="h-[calc(100vh-64px)] w-full px-[150px] text-slate-900 py-24">
-		<div class="max-w-[1440px] flex gap-10">
-			<div class="flex-1 flex flex-col py-8 justify-between">
+	<main
+		class="h-[calc(100vh-64px)] w-full px-[150px] py-24 text-slate-900 flex items-center justify-center"
+	>
+		<div class="max-w-[1440px] flex items-center gap-10 h-full">
+			<div
+				class="flex-1 flex flex-col py-8 justify-between h-full max-h-[520px]"
+			>
 				<h1 class="text-5xl font-semibold">
 					Importadora y distribuidora de
 					<span class="font-bold text-sky-900">ACERO INOXIDABLE</span>
@@ -23,19 +32,71 @@ import heroImage from "../assets/bobinaInox.png";
 					consequuntur, doloremque odio cupiditate.
 				</p>
 				<div>
-					<Button title="Comunicate" />
+					<Button title="Hola devs buenas noches" />
 				</div>
 			</div>
-			<div class="flex-1">
+			<div class="flex-1 w-full h-full flex items-center">
 				<Image
-					src={heroImage}
+					src={zyroImage}
 					alt="Hero image"
-					quality={"mid"}
-					class="drop-shadow-[0_25px_25px_rgba(23,37,84,0.5)] flotar"
+					quality={"low"}
+					class="drop-shadow-[0_25px_25px_rgba(23,37,84,0.5)] flotar w-full"
 				/>
 			</div>
 		</div>
 	</main>
+	<section class="w-full py-24 px-[150px] flex items-center justify-center">
+		<div class="max-w-[1440px] w-full flex flex-col gap-10">
+			<SectionTitle title="Mejores vendidos" />
+			<Cards />
+			<Button title="Ver Todos los Productos" fullWidth/>
+		</div>
+	</section>
+	<section
+		class="w-full py-24 px-[150px] bg-gradient-to-r from-slate-900 via-slate-900 to-slate-700"
+	>
+		<div class="max-w-[1440px] w-full flex flex-col gap-10">
+			<SectionTitle title="Por que trabajar con Kacero" whiteText />
+			<FeatureCards />
+		</div>
+	</section>
+	<section class="w-full py-24 px-[150px]">
+		<div class="max-w-[1440px] w-full flex gap-32 justify-center">
+			<div class="w-[500px]">
+				<Image
+					src={aboutUsImage}
+					alt="About us main"
+					class="rounded-xl drop-shadow-[0_25px_25px_rgba(23,37,84,0.5)]"
+				/>
+			</div>
+			<div
+				class="flex flex-col gap-10 justify-center flex-1 max-w-[500px]"
+			>
+				<SectionTitle title="¿Quiénes Somos?" />
+				<p>
+					Somos una distribuidora de productos en acero inoxidable
+					cuyo propósito es abastecer a grandes y medianas empresas de
+					la industria alimenticia láctea, citrícola, cervecera,
+					bodeguera, frigorífica, química, petroquímica, de la
+					construcción, etc.
+				</p>
+				<div>
+					<Button title="ESCRIBENOS" />
+				</div>
+			</div>
+		</div>
+	</section>
+	<section
+		class="w-full py-24 px-[150px] bg-gradient-to-r from-slate-900 via-slate-900 to-slate-700"
+	>
+		<div class="max-w-[1440px] w-full flex flex-col gap-10">
+			<SectionTitle title="Ubicación" whiteText />
+			<div id="my_map" class="h-[440px] w-full rounded-lg overflow-hidden drop-shadow-[0_15px_15px_rgba(203,213,225,0.5)] hover:translate-y-[-4px] transition-all ease-in-out duration-500">
+				<KaceroMap />
+			</div>
+			<Button title="Ver en Google Maps"/>
+		</div>
+	</section>
 </Layout>
 
 <style>
@@ -54,3 +115,4 @@ import heroImage from "../assets/bobinaInox.png";
 		}
 	}
 </style>
+ ../components/Map/kaceroMap
