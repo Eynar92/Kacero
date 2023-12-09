@@ -2,23 +2,62 @@
 import ProductCard from "./productCard.astro";
 ---
 
-<div class="w-full flex flex-wrap px-16 justify-between gap-16">
-    <ProductCard
-        productName="Bobina inoxidable"
-        title="Bobina de acero inoxidable"
-        specs={["Espesor: 3mm", "Ancho: 1.2m"]}
-        tags={["envío gratuito", "-20%"]}
-    />
-    <ProductCard
-        productName="Bobina inoxidable"
-        title="Bobina de acero inoxidable"
-        specs={["Espesor: 3mm", "Ancho: 1.2m"]}
-        tags={["envío gratuito", "-20%"]}
-    />
-    <ProductCard
-        productName="Bobina inoxidable"
-        title="Bobina de acero inoxidable"
-        specs={["Espesor: 3mm", "Ancho: 1.2m"]}
-        tags={["envío gratuito", "-20%", "-20%"]}
-    />
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+<div
+    class="swiper w-full h-[500px] flex flex-wrap px-16 justify-between gap-16"
+>
+    <div
+        class="swiper-wrapper flex justify-between items-center overflow-x-visible overflow-y-visible"
+    >
+        <div class="swiper-slide flex justify-center items-center">
+            <ProductCard
+                productName="Bobina inoxidable"
+                title="Bobina de acero inoxidable"
+                specs={["Espesor: 3mm", "Ancho: 1.2m"]}
+                tags={["envío gratuito", "-20%"]}
+            />
+        </div>
+        <div class="swiper-slide flex justify-center items-center">
+            <ProductCard
+                productName="Bobina inoxidable"
+                title="Bobina de acero inoxidable"
+                specs={["Espesor: 3mm", "Ancho: 1.2m"]}
+                tags={["envío gratuito", "-20%"]}
+            />
+        </div>
+        <div class="swiper-slide flex justify-center items-center">
+            <ProductCard
+                productName="Bobina inoxidable"
+                title="Bobina de acero inoxidable"
+                specs={["Espesor: 3mm", "Ancho: 1.2m"]}
+                tags={["envío gratuito", "-20%", "-20%"]}
+            />
+        </div>
+    </div>
 </div>
+
+<script>
+    import { Swiper } from "swiper";
+
+    new Swiper(".swiper", {
+        direction: "horizontal",
+        loop: true,
+        freeMode: true,
+        slidesPerView: 1,
+        spaceBetween: 5,
+        watchOverflow: true,
+        breakpoints: {
+            350: {
+                slidesPerView: "auto",
+                spaceBetween: 5,
+            },
+            744: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+        },
+    });
+</script>
